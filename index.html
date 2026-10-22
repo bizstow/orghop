@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OrgHop: Quick search for Salesforce</title>
+  <meta name="description" content="A Chrome extension that jumps to any Salesforce Setup page, app, object or record in one keystroke. No servers, accounts, analytics or ads.">
+  <meta property="og:title" content="OrgHop: Quick search for Salesforce">
+  <meta property="og:description" content="Jump to any Setup page, app, object or record in one keystroke.">
+  <meta property="og:image" content="https://bizstow.github.io/orghop/assets/img/popup-setup.png">
+  <meta name="theme-color" content="#021B3A">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/icon128.png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon.svg" alt="" width="32" height="32">OrgHop</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="guides/">Guides</a>
+        <a href="https://github.com/bizstow/orghop/issues/new?template=bug_report.yml">Report a bug</a>
+        <!-- Install link: point every "#install" button at the Chrome Web Store listing once it is live. -->
+        <a class="btn btn-primary" href="#install">Add to Chrome</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <span class="hero-name"><img src="assets/img/icon.svg" alt="" width="22" height="22">OrgHop: Quick search for Salesforce</span>
+          <h1 id="hero-title">Every Setup page,<br><span class="accent">one keystroke away.</span></h1>
+          <p class="lead">Press <kbd>Alt</kbd> <kbd>S</kbd>, type a few letters and press <kbd>Enter</kbd>. OrgHop finds Setup pages, apps, objects and records in the org you're already signed in to.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#install">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              Add to Chrome, it's free
+            </a>
+            <a class="btn btn-ghost" href="#features">See what it does</a>
+          </div>
+          <ul class="trust" aria-label="Privacy">
+            <li>No servers</li>
+            <li>No accounts</li>
+            <li>No analytics or ads</li>
+          </ul>
+        </div>
+        <div class="hero-shot">
+          <div class="shot"><img src="assets/img/popup-setup.png" alt="The OrgHop popup listing pinned Setup pages such as Users, Flows and Permission Sets, under a red PRODUCTION banner" width="452" height="702"></div>
+          <div class="float-key" aria-hidden="true"><kbd>⌥</kbd><kbd>S</kbd> to open</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="steps">
+      <div class="wrap">
+        <ol>
+          <li><div><strong>Open OrgHop</strong><span>Click the toolbar icon or press Alt+S on any Salesforce tab.</span></div></li>
+          <li><div><strong>Type a few letters</strong><span>"perm", "flow", "debug" or a record name. Results appear as you type.</span></div></li>
+          <li><div><strong>Press Enter</strong><span>The page opens in your org's tab. Cmd or Ctrl+Enter opens a new tab.</span></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <section id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Features</p>
+          <h2 id="features-title">Stop clicking through Setup</h2>
+          <p class="lead">OrgHop puts your whole org behind one search box, so you spend your time on the change, not on finding the page.</p>
+        </div>
+
+        <div class="feature">
+          <div>
+            <h3>Search every Setup page</h3>
+            <p>Users, Flows, Permission Sets, Object Manager, Debug Logs and more, grouped into categories such as Automation, Security and Development.</p>
+            <ul>
+              <li>Words match in any order, so "perm set" finds Permission Sets</li>
+              <li>Open in the current tab, or a new one with Cmd or Ctrl+Enter</li>
+              <li>Works in Lightning orgs, production and sandboxes</li>
+            </ul>
+          </div>
+          <div class="feature-media"><div class="shot"><img src="assets/img/popup-setup.png" alt="OrgHop showing Setup pages grouped under Objects and Fields, and Users and Permissions" width="452" height="702" loading="lazy"></div></div>
+        </div>
+
+        <div class="feature">
+          <div>
+            <h3>Find records, apps and objects</h3>
+            <p>Search accounts, contacts, opportunities, cases and custom objects in the org you're signed in to, right next to your Setup results.</p>
+            <ul>
+              <li>Results show the object type, so you open the right one</li>
+              <li>Open a Lightning app, or an object's page in Object Manager</li>
+              <li>Uses your own permissions, so you only see what you can already see</li>
+            </ul>
+          </div>
+          <div class="feature-media"><div class="shot"><img src="assets/img/popup-records.png" alt="OrgHop showing records that match northwind: accounts, opportunities, a contact and a case" width="512" height="626" loading="lazy"></div></div>
+        </div>
+
+        <div class="feature">
+          <div>
+            <h3>Search without leaving the page</h3>
+            <p>Press <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>K</kbd> on macOS, or <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>K</kbd> on Windows and Linux, and the same search opens as an overlay on top of the Salesforce page you're on.</p>
+            <ul>
+              <li>Spotlight-style panel that keeps your place on the page</li>
+              <li>Typing in it never triggers Salesforce's own shortcuts</li>
+              <li>Change either shortcut to whatever suits you</li>
+            </ul>
+          </div>
+          <div class="feature-media wide"><div class="shot"><img src="assets/img/overlay.png" alt="The OrgHop overlay open on top of a Salesforce account page, searching for ware" width="1280" height="800" loading="lazy"></div></div>
+        </div>
+
+        <div class="feature">
+          <div>
+            <h3>Always know which org you're in</h3>
+            <div class="env-badges" aria-hidden="true"><span class="env env-prod">PRODUCTION</span><span class="env env-sandbox">SANDBOX</span></div>
+            <p>Production gets a red banner and sandboxes get a green one, with the org name beside it. You'll never change the wrong org by accident.</p>
+            <ul>
+              <li>Your username is shown in the footer, which helps with "Log in as"</li>
+              <li>Each org's lists are kept separate</li>
+            </ul>
+          </div>
+          <div class="feature-media"><div class="shot"><img src="assets/img/popup-sandbox.png" alt="OrgHop in a sandbox org, with a green SANDBOX banner above the results" width="512" height="626" loading="lazy"></div></div>
+        </div>
+
+        <div class="grid" style="margin-top: 48px">
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg></div>
+            <h3>Pin your favorites</h3>
+            <p>Press Shift+Enter or click the star to keep the pages you open every day at the top. Pins sync through your Chrome profile.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><path d="M6.5 10h1M10 10h1M13.5 10h1M17 10h.5M7 14h10"/></svg></div>
+            <h3>Keyboard first</h3>
+            <p>Arrow keys to move, Enter to open, Cmd or Ctrl+Enter for a new tab, Shift+Enter to pin. A middle click works too.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+            <h3>Fast and light</h3>
+            <p>No build, no frameworks, no tracking scripts. Lists are cached for the session, so results show up instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="privacy" aria-labelledby="privacy-title">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Privacy</p>
+          <h2 id="privacy-title">Your data stays between you and your org</h2>
+          <p class="lead">OrgHop uses the Salesforce login you already have and talks only to your own org. The developer never receives any of your data.</p>
+          <p><a href="privacy.html">Read the privacy policy →</a></p>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>No servers</h3><p>Everything runs in your browser. There is no OrgHop backend.</p></div>
+          <div class="card"><h3>No accounts</h3><p>Nothing to sign up for. Your Salesforce session is all it needs.</p></div>
+          <div class="card"><h3>No analytics or ads</h3><p>No tracking, no telemetry, nothing sold or shared.</p></div>
+          <div class="card"><h3>Cleared on close</h3><p>Cached lists live in session storage. Only your pins are kept.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="guides" aria-labelledby="guides-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Guides</p>
+          <h2 id="guides-title">Get more out of OrgHop</h2>
+          <p class="lead">Short how-tos for the things people ask about most.</p>
+        </div>
+        <div class="grid">
+          <a class="card" href="guides/keyboard-shortcuts.html">
+            <h3>Keyboard shortcuts</h3>
+            <p>Every key OrgHop understands, and how to change the ones that open it.</p>
+            <span class="more">Read the guide →</span>
+          </a>
+          <a class="card" href="guides/pin-setup-pages.html">
+            <h3>Pin your favorite pages</h3>
+            <p>Keep the Setup pages you use every day at the top of the list.</p>
+            <span class="more">Read the guide →</span>
+          </a>
+          <a class="card" href="guides/">
+            <h3>All guides</h3>
+            <p>More guides are on the way. Tell us what you'd like to see in a bug report or feature request.</p>
+            <span class="more">Browse guides →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="install" aria-labelledby="install-title">
+      <div class="wrap wrap-narrow">
+        <img class="logo" src="assets/img/icon.svg" alt="" width="72" height="72">
+        <h2 id="install-title">Hop to any page in your org</h2>
+        <p class="lead">OrgHop is free for Chrome and other Chromium browsers.</p>
+        <div class="cta-row">
+          <!-- Replace this with the Chrome Web Store listing URL and the text "Add to Chrome" once the listing is live. -->
+          <a class="btn btn-primary" href="https://github.com/bizstow/orghop/releases">Coming soon to the Chrome Web Store</a>
+          <a class="btn btn-ghost" href="https://github.com/bizstow/orghop/issues/new?template=bug_report.yml">Report a bug</a>
+        </div>
+        <p class="cta-note">Follow <a href="https://github.com/bizstow/orghop/releases" style="color:#C9D6E8">release notes</a> to hear when it's live.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="./"><img src="assets/img/icon.svg" alt="" width="24" height="24">OrgHop</a>
+        <p class="disclaimer">OrgHop is an independent project and is not affiliated with or endorsed by Salesforce, Inc. Salesforce is a trademark of Salesforce, Inc. Screenshots show sample data.</p>
+        <p class="disclaimer">Copyright MA Husain. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="guides/">Guides</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="https://github.com/bizstow/orghop/issues/new?template=bug_report.yml">Report a bug</a>
+        <a href="https://github.com/bizstow/orghop/releases">Release notes</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -13,9 +13,10 @@ This repository holds OrgHop's public website, guides and issue tracker. The ext
 
 GitHub Pages builds the site from the root of `main` with Jekyll.
 
-- `index.md` is the home page.
+- `index.html` is the home page. Its "Add to Chrome" buttons point at `#install` until the Chrome Web Store listing is live; swap in the store URL then.
 - `privacy.html` is the privacy policy. Its address is in the Chrome Web Store listing, so don't rename or move it.
-- How-to guides go in `guides/`, one Markdown file per guide, each starting with front matter such as `title: Pin your favorite pages`. Link new guides from `index.md`.
+- `assets/css/site.css` styles every page. Its colors follow the extension's popup and icon. `assets/img/` holds the icon and screenshots, cropped from the extension's `store-assets/`.
+- How-to guides go in `guides/`, one Markdown file per guide, with front matter for `title`, `description` and `order`. They use `_layouts/guide.html` and are listed on `guides/` automatically. Feature the most useful ones in the Guides section of `index.html`.
 
 OrgHop is an independent project and is not affiliated with or endorsed by Salesforce, Inc.
 
