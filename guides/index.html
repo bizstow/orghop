@@ -1,0 +1,18 @@
+---
+title: Guides
+description: Short how-tos for getting around your Salesforce org with OrgHop.
+---
+<div class="guide-list">
+  {% assign guides = site.pages | where_exp: "p", "p.dir == '/guides/'" | where_exp: "p", "p.name != 'index.html'" | sort: "order" %}
+  {% for guide in guides %}
+  <a class="card" href="{{ guide.url | relative_url }}">
+    <h3>{{ guide.title }}</h3>
+    <p>{{ guide.description }}</p>
+    <span class="more">Read the guide →</span>
+  </a>
+  {% endfor %}
+  <div class="card soon">
+    <h3>More guides are on the way</h3>
+    <p>Missing something? <a href="https://github.com/bizstow/orghop/issues">Open an issue</a> and say what you'd like a guide for.</p>
+  </div>
+</div>

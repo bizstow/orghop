@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · OrgHop</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="theme-color" content="#021B3A">
+  <link rel="icon" href="{{ '/assets/img/icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/icon.svg' | relative_url }}" alt="" width="32" height="32">OrgHop</a>
+      <nav class="nav" aria-label="Main">
+        <a href="{{ '/#features' | relative_url }}">Features</a>
+        <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
+        <a href="{{ '/guides/' | relative_url }}">Guides</a>
+        <a href="https://github.com/bizstow/orghop/issues/new?template=bug_report.yml">Report a bug</a>
+        <a class="btn btn-primary" href="{{ '/#install' | relative_url }}">Add to Chrome</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc">
+    <div class="wrap wrap-narrow">
+      {% unless page.url == '/guides/' %}<p class="breadcrumb"><a href="{{ '/guides/' | relative_url }}">← All guides</a></p>{% endunless %}
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="meta">{{ page.description }}</p>{% endif %}
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/icon.svg' | relative_url }}" alt="" width="24" height="24">OrgHop</a>
+        <p class="disclaimer">OrgHop is an independent project and is not affiliated with or endorsed by Salesforce, Inc. Salesforce is a trademark of Salesforce, Inc.</p>
+        <p class="disclaimer">Copyright MA Husain. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="{{ '/guides/' | relative_url }}">Guides</a>
+        <a href="{{ '/privacy.html' | relative_url }}">Privacy policy</a>
+        <a href="https://github.com/bizstow/orghop/issues/new?template=bug_report.yml">Report a bug</a>
+        <a href="https://github.com/bizstow/orghop/releases">Release notes</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
