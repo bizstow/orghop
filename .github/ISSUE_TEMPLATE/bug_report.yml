@@ -1,0 +1,67 @@
+name: Bug report
+description: Something in OrgHop doesn't work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. Please don't paste usernames, record names, org URLs or screenshots that show customer data. This issue is public.
+  - type: input
+    id: version
+    attributes:
+      label: OrgHop version
+      description: Shown in `chrome://extensions` on the OrgHop card, and at the top of the diagnostics report.
+      placeholder: "1.1.0"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      description: For example Chrome 141, Edge 141 or Brave 1.83, and your operating system.
+      placeholder: Chrome 141 on macOS 26
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you do, what did you expect, and what happened instead?
+      placeholder: |
+        1. Opened the popup on a sandbox Lightning page
+        2. Typed "acme"
+        3. Expected record results, got "Record search failed"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options:
+        - Toolbar popup
+        - In-page overlay (keyboard shortcut)
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: org-type
+    attributes:
+      label: Org type
+      options:
+        - Production
+        - Sandbox
+        - Scratch org
+        - Developer Edition
+        - Not sure
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: |
+        In OrgHop, click the **?** button in the footer, then **Copy diagnostics**, and paste the result here. It contains versions, the shape of your org's domain and recent errors, with names, IDs and session details removed. Read it before posting.
+      render: markdown
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Does it happen every time? Did it work in an earlier version? Does your user have the "API Enabled" permission?

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OrgHop Privacy Policy</title>
+  <style>
+    body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1f2937; background: #fff; max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1 { font-size: 28px; margin-bottom: 4px; }
+    h2 { font-size: 20px; margin-top: 32px; }
+    .meta { color: #6b7280; margin-top: 0; }
+    code { background: #f3f4f6; padding: 1px 4px; border-radius: 4px; font-size: 14px; }
+    table { border-collapse: collapse; width: 100%; font-size: 15px; }
+    th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid #e5e7eb; }
+    th { background: #f9fafb; }
+  </style>
+</head>
+<body>
+  <h1>OrgHop Privacy Policy</h1>
+  <p class="meta">Effective October 22, 2026 · Applies to the OrgHop Chrome extension</p>
+
+  <p>OrgHop helps you search and open Salesforce Setup pages, apps, objects and records. It works entirely inside your browser. OrgHop has no servers, no accounts, no analytics and no advertising, and the developer never receives any of your data.</p>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>OrgHop only talks to the Salesforce org you are already signed in to, using your existing browser session.</li>
+    <li>Nothing is sent to the developer or to any other third party.</li>
+    <li>Your Salesforce session cookie is read only when needed. It is never saved and never leaves your browser except in requests to your own org.</li>
+    <li>The only thing OrgHop keeps after you close the browser is your list of pinned Setup pages.</li>
+  </ul>
+
+  <h2>Information OrgHop uses</h2>
+  <table>
+    <tr><th>What</th><th>Why</th><th>Where it is kept</th></tr>
+    <tr>
+      <td>Your Salesforce session cookie (<code>sid</code>) for the org in the current tab</td>
+      <td>To call your org's Salesforce REST API as you, so OrgHop can show your apps, objects and matching records.</td>
+      <td>Read from the browser when a request is made and held only in memory for that request. It is never written to storage or to logs. A short one-way fingerprint of it (part of a SHA-256 hash, from which the session id cannot be recovered) is kept with the cached lists below, so that after a new sign-in, or "Log in as" another user, OrgHop never shows the previous user's lists.</td>
+    </tr>
+    <tr>
+      <td>Org details: org name, org id, whether it is a sandbox, and your Salesforce username</td>
+      <td>To show which org and user you are working in.</td>
+      <td>Shown in the extension. Cached in <code>chrome.storage.session</code>.</td>
+    </tr>
+    <tr>
+      <td>Lists of the apps and objects you can access, and object metadata</td>
+      <td>To let you search and open them.</td>
+      <td>Cached in <code>chrome.storage.session</code>, which Chrome clears when the browser closes.</td>
+    </tr>
+    <tr>
+      <td>Your search text and the matching record names</td>
+      <td>To find records in your org as you type.</td>
+      <td>Sent only to your org's search API. Results are shown and then discarded. Search text is not stored.</td>
+    </tr>
+    <tr>
+      <td>Pinned Setup pages</td>
+      <td>To keep your favorite pages at the top.</td>
+      <td><code>chrome.storage.sync</code>: only the ids of the pinned pages, such as "Users" or "Flows". If Chrome sync is on, Google syncs them between your browsers.</td>
+    </tr>
+    <tr>
+      <td>A diagnostics log of recent errors and events (last 100 entries)</td>
+      <td>To help you report a bug.</td>
+      <td><code>chrome.storage.session</code>, cleared when the browser closes. Before saving, OrgHop removes session ids, access tokens, email addresses and usernames, record and org ids, query values, org-specific parts of hostnames, and the addresses of non-Salesforce pages.</td>
+    </tr>
+  </table>
+
+  <h2>Who receives your data</h2>
+  <p>Only Salesforce, at the org you are already signed in to, through requests to that org's own REST API (<code>/services/data/…</code>) on Salesforce domains. OrgHop does not sell, rent, share or transfer your data to anyone. It does not use your data for advertising, credit decisions or any purpose other than navigation.</p>
+  <p>The diagnostics report is shown to you in the extension. It leaves your browser only if you click "Copy" and paste it somewhere yourself, for example in a bug report. The "Report a bug" link opens a public GitHub form at <a href="https://github.com/bizstow/orghop/issues">github.com/bizstow/orghop</a> and sends no data with it.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong>cookies</strong>: to read your Salesforce session cookie so OrgHop can call your org's API as you.</li>
+    <li><strong>scripting</strong>: to add OrgHop's own bundled content script to a Salesforce tab that was already open before OrgHop was installed or updated, so the search overlay still opens there. No remote code is ever run.</li>
+    <li><strong>storage</strong>: to keep your pins and the session caches described above.</li>
+    <li><strong>Host access to Salesforce domains</strong> (<code>salesforce.com</code>, <code>lightning.force.com</code>, <code>salesforce-setup.com</code>): to see which org the active tab is on, run the search overlay on your org's pages, and call your org's API. OrgHop runs only on Salesforce org pages, not on other Salesforce sites such as Help or Trailhead, and not on any other website.</li>
+  </ul>
+
+  <h2>Your choices</h2>
+  <p>Unpinning a page removes it from storage. Closing the browser clears all session data. Uninstalling OrgHop removes everything it stored. Signing out of Salesforce ends the session OrgHop uses.</p>
+
+  <h2>Children</h2>
+  <p>OrgHop is a tool for Salesforce users and is not directed at children.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted at this address with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:anas.dev01@gmail.com">anas.dev01@gmail.com</a>.</p>
+
+  <p class="meta">OrgHop is an independent project and is not affiliated with or endorsed by Salesforce, Inc.</p>
+</body>
+</html>
