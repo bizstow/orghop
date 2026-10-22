@@ -1,11 +1,5 @@
 title: OrgHop
 description: Quick search for Salesforce
-baseurl: /orghop
 # README.md describes the repo for contributors; index.html is the site's home page.
 exclude:
   - README.md
-defaults:
-  - scope:
-      path: guides
-    values:
-      layout: guide
