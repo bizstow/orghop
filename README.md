@@ -20,4 +20,4 @@ GitHub Pages serves the site from the root of `main`. Every page is plain HTML a
 
 OrgHop is an independent project and is not affiliated with or endorsed by Salesforce, Inc.
 
-Copyright MA Husain. All rights reserved.
+© 2026 MA Husain, trading as Bizstow. All rights reserved.
