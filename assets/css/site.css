@@ -185,6 +185,8 @@ a.card h3 { color: var(--ink); }
 .doc li { margin-bottom: 6px; }
 .doc table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 8px 0 16px; }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+/* Lets long code such as chrome.storage.session wrap, so the table fits phone screens */
+.doc td { overflow-wrap: anywhere; }
 .doc th { background: var(--surface-alt); }
 .doc .breadcrumb { font-size: 15px; margin-bottom: 20px; }
 .doc .breadcrumb a { text-decoration: none; }
